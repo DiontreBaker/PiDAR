@@ -1,3 +1,12 @@
+*Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
+
+## Summary
+## Design Description
+## Testing Description
+## Design Decision Discussion
+## Test Results Discussion
+## Testing Results
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/DiontreBaker/PiDAR/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
