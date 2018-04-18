@@ -1,11 +1,17 @@
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
-## Design Description
-## Testing Description
-## Design Decision Discussion
-## Test Results Discussion
-## Testing Results
+## Materials
+## Assembly Procedures
+  ### Drawings
+  
+  ### Code
+## Test Equipment
+## Test Procedures
+## Test Results
+## Discussion
+  ### Design
+  ### Testing
 
 ## Welcome to GitHub Pages
 
