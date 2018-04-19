@@ -1,18 +1,24 @@
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
+
+![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png)
+
 ## Materials
 ## Assembly Procedures
-  ### Drawings
-  
-  ### Code
+### Drawings
+
+![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg)
+[LiDAR mount dwg. file](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg)
+
+### Code
 ## Test Equipment
 ## Test Procedures
 ## Test Results
 ## Discussion
-  ### Design
-  ### Testing
-
+### Design
+### Testing
+_________________________
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/DiontreBaker/PiDAR/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
