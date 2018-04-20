@@ -13,15 +13,32 @@
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg)
 
 ### Code
-  #!/usr/bin/env python
+     
+BUTTON CODE
+    import RPi.GPIO as GPIO
+      import time
+      import os
 
-from __future__ import division
-import serial
-import math
-import os
-import struct
+    #adjust for where your switch is connected
+    buttonPin = 17
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(buttonPin,GPIO.IN)
 
-with serial.Serial("/dev/ttyUSB0",
+    while True:
+      #assuming the script to call is long enough we can ignore bouncing
+     if (GPIO.input(buttonPin)):
+        #this is the script that will be called (as root)
+        os.system("python /home/pi/start.py")
+LIDAR CODE
+
+    from __future__ import division
+    import serial
+    import math
+    import os
+    import struct
+    
+
+    with serial.Serial("/dev/ttyUSB0",
                     baudrate = 115200, 
                     parity=serial.PARITY_NONE,  
                     bytesize = serial.EIGHTBITS,
@@ -47,12 +64,6 @@ with serial.Serial("/dev/ttyUSB0",
     else:
         print "Failed %s" % status
 
-        #-----------------------------------------------------------------------
-        # Missing here is stopping the scanning - it will still be running next 
-        # time code is initiated and it all gets very messy / confusong separating
-        # binary data from ASCII command / response.  Really need to do a subset of
-        # the finally: branch below.
-        #-----------------------------------------------------------------------
         os.exit()
 
     log = open("sweep.csv", "wb")
@@ -101,7 +112,28 @@ with serial.Serial("/dev/ttyUSB0",
     	sweep.write("DX\n")
     	resp = sweep.read()
     	print "Response: %s" % resp
+      # Save file under iterative names
     	log.close()
+    import time
+    if os.path.exists('result.png'):
+      plt.savefig('result_{}.png'.format(int(time.time())))
+    else:
+      plt.savefig('result.png')
+      __________________________________
+      import RPi.GPIO as GPIO
+    import time
+    import os
+
+    #adjust for where your switch is connected
+    buttonPin = 17
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(buttonPin,GPIO.IN)
+
+    while True:
+      #assuming the script to call is long enough we can ignore bouncing
+     if (GPIO.input(buttonPin)):
+        #this is the script that will be called (as root)
+        os.system("python /home/pi/start.py")
 ## Test Equipment
 ## Test Procedures
 ## Test Results
