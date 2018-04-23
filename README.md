@@ -4,7 +4,7 @@
 In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalists alike. This semester our group has taken on the task of creating a platform for control of a LiDAR scanner mounted on a UAV for measuring plant height. A LiDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone; another part is to develop a code for the LIDAR to measure the required data.
 
 ## Timeline
-![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png)
+![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
 
 ## Materials
 - Raspberry pi 3
@@ -21,9 +21,9 @@ In agriculture, we as engineers combine science and machines to help us use our 
 Copy and dowload the provided code into the Micro SD card. Then, insert the SD card to the raspberry pi. Place the raspberry pi into its provided space in the bracket. Also secure the LiDAR to its place in the same bracket, with the machine screws. Attach the USB cable from the raspberry pi to the LiDAR. Connect the power cables to the drone's battery. Then, attach the power converter to the power cables. Bolt the mount onto the drone. Finally, connect the cables to the raspeberry pi.
 
 ### Drawings
-![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg)
-[Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf)     
-[Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg)
+![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+[Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
+[Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
 
 ### Code
      
