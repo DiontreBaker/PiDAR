@@ -109,14 +109,6 @@ LIDAR CODE
         except AssertionError as e:
         print e
 
-       # Cleanup regardless otherwise the next run picks up data from this
-        finally:
-    	print "Stop scanning"
-    	sweep.write("DX\n")
-    	resp = sweep.read()
-    	print "Response: %s" % resp
-    	log.close()    
-
 
 ## Test Equipment
 
