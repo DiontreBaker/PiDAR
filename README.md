@@ -141,16 +141,17 @@ Finally, connect the cables to the Raspberry Pi.
 
 
 ## Test Equipment
+- Complete assembly
+- A monitor
+- A clavier and a mouse
+- 22V battery
 
 
 ## Test Procedure
-Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
+Use the HDMI cable to connect the pi to the monitor. Connect the clavier to the pi. and attach the power cables to the 22V battery. From the pi's home page, navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
 
 ## Test Results
-The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
-
-### Test Example
-        angle, distance, x, y
+        angle,    distance,     x,         y
      263.687500, 2.050000, -0.225400, -2.037571
      266.062500, 2.020000, -0.138710, -2.015232
      268.625000, 1.980000, -0.047512, -1.979430
@@ -175,6 +176,7 @@ The program is able to operate normally and performs the intended task. A code (
      ...
 
 ## Discussion
+The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 
 ### Design
 
