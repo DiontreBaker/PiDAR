@@ -20,30 +20,32 @@ In agriculture, we as engineers combine science and machines to help us use our 
 ### Code
      
 BUTTON CODE
-    import RPi.GPIO as GPIO
-      import time
-      import os
+     
+     import RPi.GPIO as GPIO
+     import os
+     import time
+     
+     GPIO.setmode(GPIO.BCM)
 
-    #adjust for where your switch is connected
-    buttonPin = 17
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(buttonPin,GPIO.IN)
+     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    while True:
-      #assuming the script to call is long enough we can ignore bouncing
-     if (GPIO.input(buttonPin)):
-        #this is the script that will be called (as root)
-        os.system("python /home/pi/start.py")
+     while True:
+    input_state = GPIO.input(18)
+    if input_state == False:
+        os.system("python /home/pi/code/sweep/scantest.py")
+        time.sleep(0.2)
+
+        
 LIDAR CODE
 
     from __future__ import division
-    import serial
-    import math
-    import os
-    import struct
-    
+     import serial
+     import math
+     import os
+     import struct
+     import time
 
-    with serial.Serial("/dev/ttyUSB0",
+     with serial.Serial("/dev/ttyUSB0",
                     baudrate = 115200, 
                     parity=serial.PARITY_NONE,  
                     bytesize = serial.EIGHTBITS,
@@ -68,16 +70,16 @@ LIDAR CODE
         print "OK"
     else:
         print "Failed %s" % status
-
         os.exit()
-
-    log = open("sweep.csv", "wb")
+    while os.path.exists("sweep%s.csv" % i):
+        i += 1
+    log = open("sweep%s.csv" % i, "w")
     log.write("angle, distance, x, y\n")
 
     format = '=' + 'B' * 7
 
     try:
-        while True:
+        for d in xrange (99):
             line = sweep.read(7)
             assert (len(line) == 7), "Bad data read: %d" % len(line)
             data = struct.unpack(format, line)
@@ -96,49 +98,26 @@ LIDAR CODE
             y = distance * math.sin(degrees * math.pi / 180)
 
             log.write("%f, %f, %f, %f\n" % (degrees, distance, x, y))
+        else:
+            log.close()
 
-    #--------------------------------------------------------------------------
-    # Catch Ctrl-C
-    #--------------------------------------------------------------------------
-    except KeyboardInterrupt as e:
+       # Catch Ctrl-C
+        except KeyboardInterrupt as e:
         pass        
 
-    #--------------------------------------------------------------------------
-    # Catch incorrect assumption bugs
-    #--------------------------------------------------------------------------
-    except AssertionError as e:
+       # Catch incorrect assumption bugs
+        except AssertionError as e:
         print e
 
-    #--------------------------------------------------------------------------
-    # Cleanup regardless otherwise the next run picks up data from this
-    #--------------------------------------------------------------------------
-    finally:
+       # Cleanup regardless otherwise the next run picks up data from this
+        finally:
     	print "Stop scanning"
     	sweep.write("DX\n")
     	resp = sweep.read()
     	print "Response: %s" % resp
-      # Save file under iterative names
-    	log.close()
-    import time
-    if os.path.exists('result.png'):
-      plt.savefig('result_{}.png'.format(int(time.time())))
-    else:
-      plt.savefig('result.png')
-      __________________________________
-      import RPi.GPIO as GPIO
-    import time
-    import os
+    	log.close()    
 
-    #adjust for where your switch is connected
-    buttonPin = 17
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(buttonPin,GPIO.IN)
 
-    while True:
-      #assuming the script to call is long enough we can ignore bouncing
-     if (GPIO.input(buttonPin)):
-        #this is the script that will be called (as root)
-        os.system("python /home/pi/start.py")
 ## Test Equipment
 
 
@@ -146,7 +125,7 @@ LIDAR CODE
 Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
 
 ## Test Results
-The code works perfectly. The program is able to operate normally and performs the intended task. As mentionned in the test procedure, When the button in the mount is pressed, it activates the pressscan.py code, and the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. This file can be exported and put in use.
+The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 
 ## Discussion
 ### Design
@@ -154,40 +133,4 @@ The code works perfectly. The program is able to operate normally and performs t
 ## LiDAR User Manual
 [Scanse Sweep v1.0 User Manual](https://github.com/emvanzant/PiDAR/blob/master/docs/Sweep_user_manual.pdf)
 _________________________
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/DiontreBaker/PiDAR/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DiontreBaker/PiDAR/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
