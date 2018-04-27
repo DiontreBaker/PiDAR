@@ -1,13 +1,11 @@
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
-In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalist alike. This semester our group has taken on the task of creating a platform for wireless control of a LIDAR scanner mounted on a UAV for measuring alfalfa plant height. A LIDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone. Another part of the project is to develop a code for the LIDAR to measure the required data.
-## Project Video 
-[https://youtu.be/mEO5Grrfrk8]PiDAR 
+In agriculture, engineers combine science and machines to help us use environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers. This semester, our group has taken on the task of creating a platform for control of a LIDAR (**LI**ght **D**etection **A**nd **R**anging) scanner using a Raspberry PI mounted on a UAV for measuring alfalfa plant height. This device sends pulses out to measure light frequencies and can be used to detect plant height on the ground. Project tasks include creating a mount for the LIDAR so that it will be secure to the drone, and developing a code for the LIDAR to measure the required data.
 
 ## Timeline
 
-![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+[Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
 
 
 ## Materials
@@ -34,7 +32,7 @@ Finally, connect the cables to the Raspberry Pi.
 
 ## Drawings
 
-![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+[LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
 
@@ -42,13 +40,13 @@ Finally, connect the cables to the Raspberry Pi.
 ## Code
      
      
-#### RUN FROM BOOT CODE
+### RUN FROM BOOT CODE
 
      if (GPIO.input(buttonPin)):
          # This is the script that will be called #
          os.system("python /home/pi/code/sweep/pressscan.py")
          
-#### BUTTON CODE
+### BUTTON CODE
      
      import RPi.GPIO as GPIO
      import os
