@@ -2,8 +2,8 @@
 
 ## Summary
 In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalist alike. This semester our group has taken on the task of creating a platform for wireless control of a LIDAR scanner mounted on a UAV for measuring alfalfa plant height. A LIDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone. Another part of the project is to develop a code for the LIDAR to measure the required data.
-
-[https://youtu.be/mEO5Grrfrk8](PiDAR Project Video) 
+## Project Video 
+[https://youtu.be/mEO5Grrfrk8]PiDAR 
 
 ## Timeline
 
@@ -42,13 +42,13 @@ Finally, connect the cables to the Raspberry Pi.
 ## Code
      
      
-### RUN FROM BOOT CODE
+#### RUN FROM BOOT CODE
 
      if (GPIO.input(buttonPin)):
          # This is the script that will be called #
          os.system("python /home/pi/code/sweep/pressscan.py")
          
-### BUTTON CODE
+#### BUTTON CODE
      
      import RPi.GPIO as GPIO
      import os
