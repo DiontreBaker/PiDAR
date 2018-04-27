@@ -1,29 +1,21 @@
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
-In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalists alike. This semester our group has taken on the task of creating a platform for control of a LiDAR scanner mounted on a UAV for measuring plant height. A LiDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone; another part is to develop a code for the LIDAR to measure the required data.
+In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalist alike. This semester our group has taken on the task of creating a platform for wireless control of a LIDAR scanner mounted on a UAV for measuring alfalfa plant height. A LIDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone. Another part of the project is to develop a code for the LIDAR to measure the required data.
 
 ## Timeline
-![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+
+[Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+
 
 ## Materials
-- Raspberry pi 3
-- Micro SD Card
-- Scanse Sweep Scanner (LiDAR)
-- Spreading Wings S1000 (UAV)
-- Mounting bracket (Drawing provided)
-- Panhead machine Screws (4, M2.5x0.45 mm)
-- Micro USB to USB Cable
-- 5V power converter
-- Power cables
-
 ## Assembly Procedures
-Copy and dowload the provided code into the Micro SD card. Then, insert the SD card to the raspberry pi. Place the raspberry pi into its provided space in the bracket. Also secure the LiDAR to its place in the same bracket, with the machine screws. Attach the USB cable from the raspberry pi to the LiDAR. Connect the power cables to the drone's battery. Then, attach the power converter to the power cables. Bolt the mount onto the drone. Finally, connect the cables to the raspeberry pi.
-
 ### Drawings
-![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+
+[LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
+
 
 ### Code
      
@@ -147,9 +139,8 @@ LIDAR CODE
      if (GPIO.input(buttonPin)):
         #this is the script that will be called (as root)
         os.system("python /home/pi/start.py")
-
 ## Test Equipment
-No additional equipment is required. Please follow test procedure.
+
 
 ## Test Procedure
 Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
@@ -160,4 +151,43 @@ The code works perfectly. The program is able to operate normally and performs t
 ## Discussion
 ### Design
 ### Testing
+## LiDAR User Manual
+[Scanse Sweep v1.0 User Manual](https://github.com/emvanzant/PiDAR/blob/master/docs/Sweep_user_manual.pdf)
 _________________________
+## Welcome to GitHub Pages
+
+You can use the [editor on GitHub](https://github.com/DiontreBaker/PiDAR/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+### Markdown
+
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
+### Jekyll Themes
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DiontreBaker/PiDAR/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
+### Support or Contact
+
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
