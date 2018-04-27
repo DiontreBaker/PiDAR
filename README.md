@@ -1,11 +1,15 @@
+# PiDAR
+
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
-In agriculture, engineers combine science and machines to help us use environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers. This semester, our group has taken on the task of creating a platform for control of a LIDAR (**LI**ght **D**etection **A**nd **R**anging) scanner using a Raspberry PI mounted on a UAV for measuring alfalfa plant height. This device sends pulses out to measure light frequencies and can be used to detect plant height on the ground. Project tasks include creating a mount for the LIDAR so that it will be secure to the drone, and developing a code for the LIDAR to measure the required data.
+In agriculture, engineers combine science and machines to help us use environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers. This semester, our group has taken on the task of creating a platform for control of a LIDAR (**LI**ght **D**etection **A**nd **R**anging) scanner using a Raspberry PI mounted on a UAV for measuring alfalfa plant height. This device sends pulses out to measure light frequencies and can be used to detect plant height on the ground. Project tasks include creating a mount for the LIDAR so that it will be secure to the drone, and developing code for the LIDAR to measure the required data.
+
+#### [*PiDAR Project Video*](https://youtu.be/mEO5Grrfrk8)
 
 ## Timeline
 
-[Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
 
 
 ## Materials
@@ -32,13 +36,12 @@ Finally, connect the cables to the Raspberry Pi.
 
 ## Drawings
 
-[LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
 
 
 ## Code
-     
      
 ### RUN FROM BOOT CODE
 
@@ -141,15 +144,17 @@ Finally, connect the cables to the Raspberry Pi.
 
 
 ## Test Equipment
-
+- Complete assembly (componenets listed in the "Materials" secion)
+- Monitor
+- Keyboard and mouse
+- 22V battery
 
 ## Test Procedure
 Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
 
 ## Test Results
-The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
+Below is a sample of the data collected and stored on the SD card after a successful trial.
 
-### Test Example
         angle, distance, x, y
      263.687500, 2.050000, -0.225400, -2.037571
      266.062500, 2.020000, -0.138710, -2.015232
@@ -175,12 +180,16 @@ The program is able to operate normally and performs the intended task. A code (
      ...
 
 ## Discussion
-
 ### Design
+Design considerations for the physical, 3-D printed mount and assembly include:
+- Minimum mount thickness: 0.1 in.
+- Additional material added to base considering stress points
+- Depressions for hex nuts to maintain consistency with exisitng mount components
+- Neat and compact storage of components and wiring to prevent interference during flight
 
 ### Testing
+The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 
 ## LiDAR User Manual
 [Scanse Sweep v1.0 User Manual](https://github.com/emvanzant/PiDAR/blob/master/docs/Sweep_user_manual.pdf)
-_________________________
 
