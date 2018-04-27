@@ -5,15 +5,17 @@ In agriculture, we as engineers combine science and machines to help us use our 
 
 ## Timeline
 
-![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png)
+[Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+
 
 ## Materials
 ## Assembly Procedures
 ### Drawings
 
-![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg)
-[Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf)     
-[Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg)
+[LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+[Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
+[Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
+
 
 ### Code
      
@@ -138,8 +140,14 @@ LIDAR CODE
         #this is the script that will be called (as root)
         os.system("python /home/pi/start.py")
 ## Test Equipment
-## Test Procedures
+
+
+## Test Procedure
+Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
+
 ## Test Results
+The code works perfectly. The program is able to operate normally and performs the intended task. As mentionned in the test procedure, When the button in the mount is pressed, it activates the pressscan.py code, and the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. This file can be exported and put in use.
+
 ## Discussion
 ### Design
 ### Testing
