@@ -9,17 +9,44 @@ In agriculture, we as engineers combine science and machines to help us use our 
 
 
 ## Materials
+- Raspberry Pi 3
+- Micro SD Card
+- Scanse Sweep Scanner (LiDAR)
+- Spreading Wings S1000 (UAV)
+- Mounting Bracket (Drawing provided)
+- Panhead Machine Screws (4, M2.5x0.45 mm)
+- Micro USB to USB Cable
+- 5V Power Converter
+- Power cables
+
 ## Assembly Procedures
-### Drawings
+Copy and dowload the provided code into the Micro SD card. 
+Insert the SD card to the Raspberry Pi. 
+Place the Raspberry Pi onto its provided space in the bracket. 
+Secure the LiDAR to its place in the same bracket, with the machine screws. 
+Attach the USB cable from the Raspberry Pi to the LiDAR. 
+Connect the power cables to the drone's battery. 
+Attach the power converter to the power cables. 
+Bolt the mount onto the drone.
+Finally, connect the cables to the Raspberry Pi.
+
+## Drawings
 
 [LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
 
 
-### Code
+## Code
      
-BUTTON CODE
+     
+### RUN FROM BOOT CODE
+
+     if (GPIO.input(buttonPin)):
+         # This is the script that will be called #
+         os.system("python /home/pi/code/sweep/pressscan.py")
+         
+### BUTTON CODE
      
      import RPi.GPIO as GPIO
      import os
@@ -36,7 +63,7 @@ BUTTON CODE
         time.sleep(0.2)
 
         
-LIDAR CODE
+#### LIDAR CODE
 
     from __future__ import division
      import serial
@@ -71,6 +98,8 @@ LIDAR CODE
     else:
         print "Failed %s" % status
         os.exit()
+        
+    # Writes a new scan iteratively by adding an integer onto the name of a previous scan #    
     while os.path.exists("sweep%s.csv" % i):
         i += 1
     log = open("sweep%s.csv" % i, "w")
@@ -79,6 +108,7 @@ LIDAR CODE
     format = '=' + 'B' * 7
 
     try:
+    # Collects rows of data points equal to the number in xrange plus one #
         for d in xrange (99):
             line = sweep.read(7)
             assert (len(line) == 7), "Bad data read: %d" % len(line)
@@ -101,11 +131,11 @@ LIDAR CODE
         else:
             log.close()
 
-       # Catch Ctrl-C
+       # Catch Ctrl-C #
         except KeyboardInterrupt as e:
         pass        
 
-       # Catch incorrect assumption bugs
+       # Catch incorrect assumption bugs #
         except AssertionError as e:
         print e
 
@@ -120,8 +150,11 @@ Navigate to the sweep file, then run the pressscan.py function in the same folde
 The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 
 ## Discussion
+
 ### Design
+
 ### Testing
+
 ## LiDAR User Manual
 [Scanse Sweep v1.0 User Manual](https://github.com/emvanzant/PiDAR/blob/master/docs/Sweep_user_manual.pdf)
 _________________________
