@@ -1,7 +1,9 @@
 *Group Members: Eric Vanzant (Project Owner), Tre Baker (Scrum Master), Kimberly Stenho, Rueben Golyatov, Handerson Coq, Makua Vin*
 
 ## Summary
-In agriculture, engineers combine science and machines to help us use environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers. This semester, our group has taken on the task of creating a platform for control of a LIDAR (**LI**ght **D**etection **A**nd **R**anging) scanner using a Raspberry PI mounted on a UAV for measuring alfalfa plant height. This device sends pulses out to measure light frequencies and can be used to detect plant height on the ground. Project tasks include creating a mount for the LIDAR so that it will be secure to the drone, and developing a code for the LIDAR to measure the required data.
+
+In agriculture, we as engineers combine science and machines to help us use our environment more efficiently. At the University of Kentucky, engineering students are creating new inventive ways to help farmers and environmentalist alike. This semester our group has taken on the task of creating a platform for wireless control of a LIDAR scanner mounted on a UAV for measuring alfalfa plant height. A LIDAR stands for Light Detection and Ranging. This device sends pulses out to measure light frequencies so that the LIDAR can pick up differences in height on the ground. The first part of the project is to create a mount for the LIDAR so that it will be secure to the drone. Another part of the project is to develop a code for the LIDAR to measure the required data.
+
 
 ## Timeline
 
@@ -20,15 +22,7 @@ In agriculture, engineers combine science and machines to help us use environmen
 - Power cables
 
 ## Assembly Procedures
-Copy and dowload the provided code into the Micro SD card. 
-Insert the SD card to the Raspberry Pi. 
-Place the Raspberry Pi onto its provided space in the bracket. 
-Secure the LiDAR to its place in the same bracket, with the machine screws. 
-Attach the USB cable from the Raspberry Pi to the LiDAR. 
-Connect the power cables to the drone's battery. 
-Attach the power converter to the power cables. 
-Bolt the mount onto the drone.
-Finally, connect the cables to the Raspberry Pi.
+Copy and dowload the provided code into the Micro SD card. Insert the SD card to the Raspberry Pi. Place the Raspberry Pi onto its provided space in the bracket. Secure the LiDAR to its place in the same bracket, with the machine screws. Attach the USB cable from the Raspberry Pi to the LiDAR. Connect the power cables to the drone's battery. Attach the power converter to the power cables. Bolt the mount onto the drone. Finally, connect the cables to the Raspberry Pi.
 
 ## Drawings
 
@@ -141,41 +135,17 @@ Finally, connect the cables to the Raspberry Pi.
 
 
 ## Test Equipment
-
-
+- All materials listed above
+- A monitor
+- Keyboard
+- 22V battery
 ## Test Procedure
-Navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
+Connect the keyboard to the pi. Connect the power cables to the 22V battery.From the pi's home page, navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
 
 ## Test Results
-The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
-
-### Test Example
-        angle, distance, x, y
-     263.687500, 2.050000, -0.225400, -2.037571
-     266.062500, 2.020000, -0.138710, -2.015232
-     268.625000, 1.980000, -0.047512, -1.979430
-     271.187500, 1.950000, 0.040412, -1.949581
-     273.750000, 1.930000, 0.126228, -1.925868
-     276.125000, 1.910000, 0.203793, -1.899097
-     278.687500, 1.890000, 0.285475, -1.868316
-     281.250000, 1.870000, 0.364819, -1.834068
-     283.812500, 1.860000, 0.444066, -1.806213
-     286.562500, 1.870000, 0.533064, -1.792412
-     288.750000, 1.850000, 0.594663, -1.751821
-     291.000000, 1.830000, 0.655813, -1.708452
-     293.562500, 1.850000, 0.739536, -1.695755
-     296.125000, 1.840000, 0.810209, -1.652017
-     298.687500, 1.860000, 0.892860, -1.631687
-     301.375000, 1.880000, 0.978798, -1.605103
-     303.937500, 1.900000, 1.060748, -1.576329
-     316.750000, 0.010000, 0.007284, -0.006852
-     329.562500, 0.090000, 0.077596, -0.045594
-     342.375000, 0.150000, 0.142959, -0.045418
-     351.937500, 0.190000, 0.188122, -0.026648
-     ...
 
 ## Discussion
-
+The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 ### Design
 
 ### Testing
