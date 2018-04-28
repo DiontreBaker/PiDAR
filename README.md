@@ -19,11 +19,11 @@ In agriculture, we as engineers combine science and machines to help us use our 
 - Micro SD Card
 - Scanse Sweep Scanner (LiDAR)
 - Spreading Wings S1000 (UAV)
-- Mounting Bracket (Drawing provided)
+- Mounting Bracket (Drawing Provided)
 - Panhead Machine Screws (4, M2.5x0.45 mm)
 - Micro USB to USB Cable
 - 5V Power Converter
-- Power cables
+- Power Cables
 
 ## Assembly Procedures
 Copy and dowload the provided code into the Micro SD card. Insert the SD card to the Raspberry Pi. Place the Raspberry Pi onto its provided space in the bracket. Secure the LiDAR to its place in the same bracket, with the machine screws. Attach the USB cable from the Raspberry Pi to the LiDAR. Connect the power cables to the drone's battery. Attach the power converter to the power cables. Bolt the mount onto the drone. Finally, connect the cables to the Raspberry Pi.
@@ -60,7 +60,7 @@ Copy and dowload the provided code into the Micro SD card. Insert the SD card to
         time.sleep(0.2)
 
         
-#### LIDAR CODE
+### LIDAR CODE
 
     from __future__ import division
      import serial
