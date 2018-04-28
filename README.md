@@ -7,7 +7,7 @@ In agriculture, we as engineers combine science and machines to help us use our 
 
 ## Timeline
 
-[Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
+![Gantt Chart/Timeline](https://github.com/emvanzant/PiDAR/blob/master/docs/Gantt%20Chart.png?raw=true)
 
 
 ## Materials
@@ -26,7 +26,7 @@ Copy and dowload the provided code into the Micro SD card. Insert the SD card to
 
 ## Drawings
 
-[LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
+![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
 [Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
 
@@ -152,5 +152,3 @@ The program is able to operate normally and performs the intended task. A code (
 
 ## LiDAR User Manual
 [Scanse Sweep v1.0 User Manual](https://github.com/emvanzant/PiDAR/blob/master/docs/Sweep_user_manual.pdf)
-_________________________
-
