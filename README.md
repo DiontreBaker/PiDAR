@@ -138,18 +138,13 @@ Copy and dowload the provided code into the Micro SD card. Insert the SD card to
 
 
 ## Test Equipment
-- Complete assembly
-- A monitor
-- A clavier and a mouse
-- 22V battery
-
 - Complete assembly (componenets listed in the "Materials" secion)
 - Monitor
 - Keyboard and mouse
 - 22V battery
 
 ## Test Procedure
-Use the HDMI cable to connect the pi to the monitor. Connect the clavier to the pi. and attach the power cables to the 22V battery. From the pi's home page, navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
+Use the HDMI cable to connect the pi to the monitor. Connect the keyboard to the pi. and attach the power cables to the 22V battery. From the pi's home page, navigate to the sweep file, then run the pressscan.py function in the same folder. That call is path-dependent, and it's visible in the pressscan.py code. Press the button on the mount to initialize the program. When the button activates the pressscan.py code, the LiDAR begins collecting data, saving it in bundles of 100 rows as a .csv file. The program adds an integer onto the end of the name sweep.csv if it alreay exists. Press the button a second time to stop the program.
 
 
 ## Test Results
