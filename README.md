@@ -179,6 +179,7 @@ Below is a sample of the data collected and stored on the SD card after a succes
      342.375000, 0.150000, 0.142959, -0.045418
      351.937500, 0.190000, 0.188122, -0.026648
      ...
+     
 ## Discussion
 The program is able to operate normally and performs the intended task. A code (pressscan.py) starts upon booting (by editing /etc/rc.local) which, when the button on the mount is pressed, calls on another program (scantest.py) to run a scan with the LiDAR, which saves data iteratively as a .csv file. This file includes angle and distance, and can be exported.
 
