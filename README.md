@@ -32,7 +32,7 @@ Copy and dowload the provided code into the Micro SD card. Insert the SD card to
 
 ![LiDAR mount drawing](https://github.com/emvanzant/PiDAR/blob/master/docs/mount%20drawing.jpg?raw=true)
 [Download LiDAR mount file (.pdf)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.pdf?raw=true)     
-[Download LiDAR mount file (.dwg)](https://github.com/emvanzant/PiDAR/blob/master/docs/LiDAR_mount_sweepclamp_Rev.2.dwg?raw=true)
+[Download LiDAR mount parts and drawings (.zip)](https://github.com/emvanzant/PiDAR/blob/master/docs/BAE305_Sweep%20LiDAR%20mount.zip?raw=true)
 
 
 ## Code
